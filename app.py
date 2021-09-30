@@ -3,6 +3,7 @@ Run a rest API exposing the yolov5s object detection model
 """
 import argparse
 import io
+import os
 
 import torch
 from PIL import Image
@@ -36,4 +37,6 @@ if __name__ == "__main__":
 
     model = torch.hub.load("ultralytics/yolov5", 'custom', path=model_path, force_reload=True)  # force_reload to recache
     #model = torch.hub.load("ultralytics/yolov5", "yolov5s", force_reload=True)
-    app.run(host="0.0.0.0", port=args.port)  # debug=True causes Restarting with stat
+    #app.run(host="0.0.0.0", port=args.port)  # debug=True causes Restarting with stat
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
