@@ -11,7 +11,7 @@ from flask import Flask, request
 app = Flask(__name__)
 
 DETECTION_URL = "/v1/object-detection/yolov5s"
-model_path = "C:/Users/ioan/Desktop/stickytraps/yolov5/stickytraps.pt"
+model_path = "./stickytraps.pt"
 
 
 @app.route(DETECTION_URL, methods=["POST"])
