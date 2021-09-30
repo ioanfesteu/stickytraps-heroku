@@ -31,7 +31,7 @@ def predict():
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Flask API exposing YOLOv5 model")
-    parser.add_argument("--port", default=5000, type=int, help="port number")
+    parser.add_argument("--port", default=33507, type=int, help="port number")
     args = parser.parse_args()
 
     model = torch.hub.load("ultralytics/yolov5", 'custom', path=model_path, force_reload=True)  # force_reload to recache
